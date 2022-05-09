@@ -1,0 +1,17 @@
+{{ if .Values.rbac.install }}
+apiVersion: rbac.authorization.k8s.io/{{ required "A valid .Values.rbac.apiVersion entry required!" .Values.rbac.apiVersion }}
+kind: RoleBinding
+metadata:
+  name: {{ .Values.rbac.group }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+subjects:
+- kind: Group
+  apiGroup: rbac.authorization.k8s.io
+  name: {{ .Values.rbac.group }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view
+{{ end }}
