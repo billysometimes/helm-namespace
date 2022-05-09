@@ -3,7 +3,10 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-
+rbac:
+  name: rbac-openshift-appdev
+  namespace: dev1-digital
+  
 image:
   repository: nginx
   pullPolicy: IfNotPresent
