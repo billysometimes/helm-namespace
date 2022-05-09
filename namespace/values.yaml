@@ -7,8 +7,8 @@ rbac:
   namespace: dev1-digital
   edit:
     name: rbac-openshift-appdev-digital
-  view:
-    name: rbac-openshift-appdev
+ # view:
+ #   name: rbac-openshift-appdev
   admin:
     name: rbac-openshift-appdev-digital-nsadmin
 
