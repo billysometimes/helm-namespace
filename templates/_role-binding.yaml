@@ -1,0 +1,10 @@
+{{- define "namespacelib.role-binding.tpl" -}}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ .Release.Name | printf "%s-%s" .Chart.Name }}
+  namespace: {{ .Release.Namespace }}
+{{- end -}}
+{{- define "namespacelib.role-binding" -}}
+{{- include "namespacelib.util.merge" (append . "namespacelib.role-binding.tpl") -}}
+{{- end -}}
