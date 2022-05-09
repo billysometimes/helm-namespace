@@ -4,9 +4,14 @@
 
 replicaCount: 1
 rbac:
-  name: rbac-openshift-appdev
   namespace: dev1-digital
-  
+  edit:
+    name: rbac-openshift-appdev-digital
+  view:
+    name: rbac-openshift-appdev
+  admin:
+    name: rbac-openshift-appdev-digital-nsadmin
+
 image:
   repository: nginx
   pullPolicy: IfNotPresent
