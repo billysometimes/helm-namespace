@@ -1,0 +1,13 @@
+kind: ResourceQuota
+apiVersion: v1
+metadata:
+  name: project-resources
+  namespace: {{ .Values.rbac.namespace }}
+spec:
+  hard:
+    requests.cpu: '8'
+    requests.ephemeral-storage: 4Gi
+    requests.memory: 32Gi
+    requests.storage: 100Gi
+    persistentvolumeclaims: '5'
+    limits.ephemeral-storage: 8Gi

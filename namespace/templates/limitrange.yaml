@@ -1,0 +1,11 @@
+kind: LimitRange
+apiVersion: v1
+metadata:
+  name: resource-limits
+  namespace: dev1-digital
+  spec:
+    limits:
+      - type: Container
+        defaultRequest:
+          cpu: 100m
+          memory: 256Mi
